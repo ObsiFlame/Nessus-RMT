@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>All Vulnerabilities (Scan {{ scan_id }})</h3>
+
+<a href="javascript:history.back()" class="btn btn-secondary mb-3">Back</a>
+
+{% include "_vuln_table.html" %}
+
+<p class="text-muted mt-2">
+    CVSS values are not available in Nessus aggregated vulnerability data.
+</p>
+
+{% endblock %}

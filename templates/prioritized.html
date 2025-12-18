@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Prioritized Vulnerabilities (Scan {{ scan_id }})</h3>
+
+<a class="btn btn-danger mb-3"
+   href="/generate_report/{{ scan_id }}">
+   Generate Default Report
+</a>
+
+<a class="btn btn-primary mb-3"
+   href="/custom_report/{{ scan_id }}">
+   Custom Report
+</a>
+
+<a class="btn btn-success mb-3"
+   href="/export_prioritized_csv/{{ scan_id }}">
+   Export CSV
+</a>
+
+{% include "_vuln_table.html" %}
+
+{% endblock %}

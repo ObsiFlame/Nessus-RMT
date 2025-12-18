@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Custom Report Builder</h3>
+
+<form method="post">
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Select</th>
+            <th>Plugin ID</th>
+            <th>Plugin Name</th>
+            <th>Severity</th>
+            <th>VPR</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for v in vulns %}
+        <tr>
+            <td>
+                <input type="checkbox" name="plugin_id" value="{{ v.plugin_id }}">
+            </td>
+            <td>{{ v.plugin_id }}</td>
+            <td>{{ v.plugin_name }}</td>
+            <td>{{ v.severity }}</td>
+            <td>{{ v.vpr_score }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<button class="btn btn-success">Generate Custom Report</button>
+<a href="javascript:history.back()" class="btn btn-secondary">Back</a>
+</form>
+
+{% endblock %}

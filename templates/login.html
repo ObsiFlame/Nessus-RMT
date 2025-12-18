@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nessus RMT Login</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            min-height: 100vh;
+        }
+
+        .login-card {
+            max-width: 520px;
+            margin: auto;
+            margin-top: 10vh;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .login-header {
+            background: #1b263b;
+            color: #ffffff;
+            padding: 25px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+        }
+
+        .login-header h3 {
+            margin-bottom: 5px;
+        }
+
+        .login-body {
+            padding: 30px;
+        }
+
+        .login-footer {
+            background: #f8f9fa;
+            padding: 15px;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #6c757d;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .form-text {
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-card">
+
+    <!-- Header -->
+    <div class="login-header">
+        <h3>Nessus RMT Platform</h3>
+        <p class="mb-0">Vulnerability Assessment & Reporting</p>
+    </div>
+
+    <!-- Body -->
+    <div class="login-body">
+    {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Login Failed</strong><br>
+            {{ error }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    {% endif %}
+
+        <form method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Access Key</label>
+                <input type="text"
+                       class="form-control"
+                       name="access_key"
+                       placeholder="Enter Nessus Access Key"
+                       required>
+                <div class="form-text">
+                    Generated from Nessus → Settings → API Keys
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Secret Key</label>
+                <input type="password"
+                       class="form-control"
+                       name="secret_key"
+                       placeholder="Enter Nessus Secret Key"
+                       required>
+                <div class="form-text">
+                    This key is never stored and used only for the active session.
+                </div>
+            </div>
+
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg">
+                    Connect to Nessus
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="login-footer">
+        <div>
+            Secure session-based authentication
+        </div>
+        <div>
+            No credentials are stored on disk
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<table class="table table-bordered table-striped">
+<thead class="table-dark">
+<tr>
+    <th>Plugin ID</th>
+    <th>Plugin / Vulnerability Name</th>
+    <th>Severity</th>
+    <th>VPR</th>
+    <th>CVSS v3 Base Score</th>
+    <th>CVSS v2 Base Score</th>
+    <th>CVSS v3 Vector</th>
+    <th>Affected Hosts</th>
+</tr>
+</thead>
+<tbody>
+{% for v in vulns %}
+<tr>
+    <td>{{ v.plugin_id }}</td>
+    <td>{{ v.plugin_name }}</td>
+    <td>{{ v.severity_label }}</td>
+    <td>{{ v.vpr if v.vpr is not none else "N/A" }}</td>
+    <td>{{ v.cvss3 if v.cvss3 is not none else "N/A" }}</td>
+    <td>{{ v.cvss2 if v.cvss2 is not none else "N/A" }}</td>
+    <td style="font-size:0.85em">{{ v.cvss3_vector }}</td>
+    <td>{{ v.hosts }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>

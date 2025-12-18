@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>{{ scan.info.name }}</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Scan ID</th>
+        <td>{{ scan.info.object_id }}</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>{{ scan.info.status }}</td>
+    </tr>
+    <tr>
+        <th>Targets</th>
+        <td>{{ scan.info.targets }}</td>
+    </tr>
+</table>
+
+<a class="btn btn-primary"
+   href="/vulnerabilities/{{ scan.info.object_id }}">
+   All Vulnerabilities
+</a>
+
+<a class="btn btn-danger"
+   href="/prioritized/{{ scan.info.object_id }}">
+   Prioritized (VPR)
+</a>
+
+{% endblock %}

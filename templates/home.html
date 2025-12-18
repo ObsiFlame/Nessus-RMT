@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Vulnerability Assessment & Reporting Platform</h2>
+
+<p class="lead">
+    This tool integrates directly with <strong>Tenable Nessus</strong> to help
+    security teams <strong>analyze scan results</strong>, 
+    <strong>prioritize risk</strong>, and 
+    <strong>generate audit-ready reports</strong>.
+</p>
+
+<hr>
+
+<h4>🔍 How the Tool Works</h4>
+
+<ol>
+    <li>
+        <strong>Connect to Nessus</strong><br>
+        Authenticate securely using Nessus API keys.
+    </li>
+    <li>
+        <strong>Browse Scans</strong><br>
+        View all available Nessus scans and drill into scan details.
+    </li>
+    <li>
+        <strong>Analyze Vulnerabilities</strong><br>
+        <ul>
+            <li><b>All Vulnerabilities</b> – Complete inventory</li>
+            <li><b>Prioritized Vulnerabilities</b> – Risk-based (VPR + CVSS)</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Generate Reports</strong><br>
+        Create professional DOCX reports:
+        <ul>
+            <li>Default prioritized reports</li>
+            <li>Custom selection-based reports</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Manage Reports</strong><br>
+        Download and track generated reports.
+    </li>
+</ol>
+
+<hr>
+
+<h4>📊 Risk & Prioritization Logic</h4>
+
+<ul>
+    <li>Severity ≥ <strong>High</strong></li>
+    <li>VPR Score ≥ <strong>7.0</strong></li>
+    <li>CVSS v3 / v2 metrics displayed where available</li>
+</ul>
+
+<p class="text-muted">
+    Note: CVSS data is sourced from Nessus prioritization plugins and may not
+    be available for all vulnerabilities.
+</p>
+
+<hr>
+
+<h4>🛡️ Security & Design</h4>
+
+<ul>
+    <li>Session-based API authentication</li>
+    <li>No credentials stored on disk</li>
+    <li>Read-only Nessus API usage</li>
+    <li>Modular architecture for extensibility</li>
+</ul>
+
+<hr>
+
+<h4>🚀 Get Started</h4>
+
+<a href="/" class="btn btn-primary">
+    Go to Scan Browser
+</a>
+
+{% endblock %}

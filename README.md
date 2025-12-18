@@ -17,7 +17,7 @@ This tool acts as a read-only intelligence and reporting layer on top of Nessus,
 ## Installation & Setup
 - Clone the Repository
     ```
-    git clone https://github.com/<your-username>/nessus-rmt.git
+    git clone https://github.com/ObsiFlame/Nessus-RMT.git
     cd nessus-rmt
     ```
 - Create Virtual Environment

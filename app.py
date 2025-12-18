@@ -52,7 +52,7 @@ def login():
                 secret_key
             )
 
-            # 🔐 REAL AUTH CHECK (protected endpoint)
+            # REAL AUTH CHECK (protected endpoint)
             if client.validate_connection():
                 session["access_key"] = access_key
                 session["secret_key"] = secret_key

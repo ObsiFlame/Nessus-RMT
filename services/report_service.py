@@ -101,7 +101,7 @@ def generate_docx(scan_id, findings):
         add_row(table, "Recommendation", finding.get("solution"))
         add_row(table, "Proof of Concept", finding.get("plugin_output"))
         add_row(table, "Business Impact", finding.get("synopsis"))
-        add_row(table, "Business Impact", finding.get("references"))
+        add_row(table, "References", finding.get("references"))
 
     doc.save(filename)
     return filename

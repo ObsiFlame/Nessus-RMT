@@ -142,7 +142,7 @@ def normalize_plugin(plugin):
         # Content
         "synopsis": attrs.get("synopsis"),
         "description": attrs.get("description"),
-        "solution": plugin.get("solution"),
+        "solution": attrs.get("solution"),
 
         # Evidence
         "plugin_output": plugin.get("plugin_output", "Refer Nessus output"),
